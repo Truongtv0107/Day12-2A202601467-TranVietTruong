@@ -18,9 +18,9 @@
 
 | Mục | Nội dung |
 |-----|----------|
-| Public URL | Chưa deploy — cần tạo service Railway và cập nhật URL HTTPS thật trước khi nộp CP5 |
-| Platform | Railway (đã có `railway.toml`; chưa deploy) |
-| Ngày deploy | Chưa deploy |
+| Public URL | https://day12-2a202601467-tranviettruong-production-ae8c.up.railway.app |
+| Platform | Railway |
+| Ngày deploy | 2026-08-10 |
 
 ## Biến Môi Trường Đã Set Trên Cloud
 
@@ -30,7 +30,7 @@ Ghi tên biến và **nguồn giá trị**, không ghi giá trị:
 |------|--------|---------|
 | `PORT` | ✅ | platform tự gán |
 | `AGENT_API_KEY` | ✅ | đặt trong dashboard, không nằm trong repo |
-| `REDIS_URL` | ⏳ | Sẽ dùng Redis service của Railway hoặc Upstash khi deploy |
+| `REDIS_URL` | ✅ | tham chiếu tới Railway Redis service |
 | `RATE_LIMIT_PER_MINUTE` | ✅ | 10 |
 | `MONTHLY_BUDGET_USD` | ✅ | 10.0 |
 | `LOG_LEVEL` | ✅ | INFO |
@@ -72,9 +72,15 @@ done; echo
 
 Dán output của các lệnh trên vào đây:
 
-```
-Chưa có kết quả cloud vì service chưa được deploy. Sau deploy sẽ lưu kết quả
-curl /health, /ready và /ask tại đây; không dán API key vào file này.
+```text
+GET /health  -> HTTP 200
+{"status":"ok","service":"day12-agent","version":"1.0.0"}
+
+GET /ready   -> HTTP 200
+{"status":"ready","redis":true}
+
+POST /ask (không có X-API-Key) -> HTTP 401
+{"detail":"invalid or missing API key"}
 ```
 
 ## Ảnh Chụp Màn Hình
