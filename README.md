@@ -6,7 +6,9 @@
 
 **Báo cáo và hướng dẫn demo:** [REPORT.md](REPORT.md)
 
-**Bản triển khai:** [Swagger UI](https://day12-2a202601467-tranviettruong-production-ae8c.up.railway.app/docs)
+**Demo cho người dùng:** [Web Chat](https://day12-2a202601467-tranviettruong-production-ae8c.up.railway.app)
+
+**Kiểm thử API:** [Swagger UI](https://day12-2a202601467-tranviettruong-production-ae8c.up.railway.app/docs)
 
 Đưa một AI agent từ `localhost:8000` lên một địa chỉ công khai mà người khác
 gọi được, có bảo mật, có giới hạn chi phí, và không sập khi bạn deploy bản mới.

@@ -9,6 +9,7 @@
 | Repository | [DAY12-2A202601467-TranVietTruong](https://github.com/Truongtv0107/DAY12-2A202601467-TranVietTruong) |
 | Nền tảng triển khai | Railway |
 | API công khai | [day12-2a202601467-tranviettruong-production-ae8c.up.railway.app](https://day12-2a202601467-tranviettruong-production-ae8c.up.railway.app) |
+| Web Chat | [Mở giao diện hỏi đáp](https://day12-2a202601467-tranviettruong-production-ae8c.up.railway.app/) |
 | Swagger UI | [/docs](https://day12-2a202601467-tranviettruong-production-ae8c.up.railway.app/docs) |
 
 ## 2. Mục tiêu đề tài
@@ -131,16 +132,18 @@ Giá trị API key không được ghi vào báo cáo hoặc repository.
 
 ## 9. Kịch bản demo trên lớp
 
-1. Mở [Swagger UI](https://day12-2a202601467-tranviettruong-production-ae8c.up.railway.app/docs).
-2. Mở `GET /health`, bấm **Try it out** rồi **Execute** để chứng minh process sống.
-3. Mở `GET /ready` và Execute để chứng minh Redis đã kết nối.
-4. Mở `POST /ask`, bấm **Try it out**.
-5. Nhập API key đang lưu trong Railway vào `x-api-key`; nhập
+1. Mở [Web Chat](https://day12-2a202601467-tranviettruong-production-ae8c.up.railway.app/) để giới thiệu giao diện dành cho người dùng.
+2. Nhập API key, mã người dùng `2A202601467`, đặt câu hỏi và giải thích câu trả lời cùng số token/chi phí hiển thị dưới tin nhắn.
+3. Mở [Swagger UI](https://day12-2a202601467-tranviettruong-production-ae8c.up.railway.app/docs) để demo kỹ thuật.
+4. Mở `GET /health`, bấm **Try it out** rồi **Execute** để chứng minh process sống.
+5. Mở `GET /ready` và Execute để chứng minh Redis đã kết nối.
+6. Mở `POST /ask`, bấm **Try it out**.
+7. Nhập API key đang lưu trong Railway vào `x-api-key`; nhập
    `2A202601467` vào `x-user-id`.
-6. Nhập body `{"question":"Docker là gì?"}` rồi Execute.
-7. Giải thích response: `answer` là câu trả lời, `history_length` chứng minh Redis
+8. Nhập body `{"question":"Docker là gì?"}` rồi Execute.
+9. Giải thích response: `answer` là câu trả lời, `history_length` chứng minh Redis
    nhớ hội thoại, `cost_usd` và `tokens` phục vụ kiểm soát chi phí.
-8. Không chiếu hoặc gửi API key trong ảnh/video. Nếu khóa từng bị lộ, tạo khóa
+10. Không chiếu hoặc gửi API key trong ảnh/video. Nếu khóa từng bị lộ, tạo khóa
    mới và thay biến `AGENT_API_KEY` trên Railway trước khi demo.
 
 ## 10. Kết luận

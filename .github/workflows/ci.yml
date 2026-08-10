@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run checkpoints that do not need a deployed URL
-        run: pytest --ignore=tests/test_cp5.py tests/test_cp1.py tests/test_cp2.py tests/test_cp3.py tests/test_cp4.py -v
+        run: pytest --ignore=tests/test_cp5.py tests/test_cp1.py tests/test_cp2.py tests/test_cp3.py tests/test_cp4.py tests/test_web_ui.py -v
       - name: Build Docker image
         run: docker build -t day12-agent:${{ github.sha }} .
 

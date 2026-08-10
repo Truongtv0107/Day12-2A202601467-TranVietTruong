@@ -15,9 +15,10 @@ from __future__ import annotations
 
 from contextlib import asynccontextmanager
 from functools import lru_cache
+from pathlib import Path
 
 from fastapi import Depends, FastAPI
-from fastapi.responses import JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel, Field
 
 from utils.mock_llm import ask_llm
@@ -64,10 +65,17 @@ async def lifespan(_app: FastAPI):
 
 
 app = FastAPI(title="Day 12 Production Agent", version=SERVICE_VERSION, lifespan=lifespan)
+WEB_UI_PATH = Path(__file__).with_name("index.html")
 
 
 class AskRequest(BaseModel):
     question: str = Field(min_length=1, max_length=2000)
+
+
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
+def web_ui():
+    """Trang chat tối giản cho người dùng không cần thao tác qua Swagger."""
+    return WEB_UI_PATH.read_text(encoding="utf-8")
 
 
 # ─────────────────────────────────────────────────────────────
