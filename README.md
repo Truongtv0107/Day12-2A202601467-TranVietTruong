@@ -1,6 +1,12 @@
 # K3 — Ngày 12: Hạ Tầng Cloud & Deployment (9h00–13h00)
 
-![CI](https://github.com/Truongtv0107/Day12-2A202601467-TranVietTruong/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Truongtv0107/DAY12-2A202601467-TranVietTruong/actions/workflows/ci.yml/badge.svg)
+
+**Bài làm:** Trần Việt Trường — **2A202601467**
+
+**Báo cáo và hướng dẫn demo:** [REPORT.md](REPORT.md)
+
+**Bản triển khai:** [Swagger UI](https://day12-2a202601467-tranviettruong-production-ae8c.up.railway.app/docs)
 
 Đưa một AI agent từ `localhost:8000` lên một địa chỉ công khai mà người khác
 gọi được, có bảo mật, có giới hạn chi phí, và không sập khi bạn deploy bản mới.

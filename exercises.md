@@ -116,4 +116,4 @@ Ghi lại **một** lỗi bạn gặp khi deploy lên cloud (build fail, health 
 timeout, sai REDIS_URL, app không đọc `$PORT`...): thông báo lỗi là gì, bạn
 tìm ra nguyên nhân bằng cách nào, và sửa ra sao?
 
-> Khi chuẩn bị deploy, tôi kiểm tra `PORT` vì cloud không đảm bảo cổng 8000. Dockerfile dùng `${PORT:-8000}` nên local vẫn chạy ở 8000 còn Railway có thể truyền cổng riêng. Tôi sẽ kiểm tra log deploy, gọi `/health`, `/ready` và `/ask` không API key để xác nhận lần deploy thật trước khi công khai URL.
+> Khi deploy lần đầu, Railway lặp lại lỗi `Invalid value for '--port': '$PORT' is not a valid integer`, sau đó healthcheck thất bại. Tôi đọc Deploy Logs và nhận ra start command đang truyền chuỗi literal `$PORT` cho Uvicorn thay vì để shell mở rộng biến. Tôi bỏ start command sai trong `railway.toml`, dùng `CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]` và sửa Docker healthcheck đọc đúng `PORT`. Sau khi redeploy, `/health` và `/ready` đều trả 200, còn `/ask` không có API key trả 401 đúng yêu cầu.

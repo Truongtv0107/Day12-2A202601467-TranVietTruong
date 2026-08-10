@@ -12,7 +12,7 @@
 |-----|----------|
 | Họ và tên | Trần Việt Trường |
 | Mã học viên | 2A202601467 |
-| Repo | https://github.com/Truongtv0107/Day12-2A202601467-TranVietTruong |
+| Repo | https://github.com/Truongtv0107/DAY12-2A202601467-TranVietTruong |
 
 ## Service
 
