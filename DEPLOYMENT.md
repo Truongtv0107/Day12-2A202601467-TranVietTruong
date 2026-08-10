@@ -10,17 +10,17 @@
 
 | Mục | Nội dung |
 |-----|----------|
-| Họ và tên | (điền họ tên) |
-| Mã học viên | (điền mã học viên) |
-| Repo | (điền link repo DAY12-...) |
+| Họ và tên | Trần Việt Trường |
+| Mã học viên | 2A202601467 |
+| Repo | https://github.com/Truongtv0107/Day12-2A202601467-TranVietTruong |
 
 ## Service
 
 | Mục | Nội dung |
 |-----|----------|
-| Public URL | https://TODO-thay-bang-url-that.up.railway.app |
-| Platform | Railway / Render / Cloud Run — (điền platform bạn dùng) |
-| Ngày deploy | (điền ngày) |
+| Public URL | Chưa deploy — cần tạo service Railway và cập nhật URL HTTPS thật trước khi nộp CP5 |
+| Platform | Railway (đã có `railway.toml`; chưa deploy) |
+| Ngày deploy | Chưa deploy |
 
 ## Biến Môi Trường Đã Set Trên Cloud
 
@@ -30,7 +30,7 @@ Ghi tên biến và **nguồn giá trị**, không ghi giá trị:
 |------|--------|---------|
 | `PORT` | ✅ | platform tự gán |
 | `AGENT_API_KEY` | ✅ | đặt trong dashboard, không nằm trong repo |
-| `REDIS_URL` | ✅ | (điền: Redis add-on của platform / Upstash / ...) |
+| `REDIS_URL` | ⏳ | Sẽ dùng Redis service của Railway hoặc Upstash khi deploy |
 | `RATE_LIMIT_PER_MINUTE` | ✅ | 10 |
 | `MONTHLY_BUDGET_USD` | ✅ | 10.0 |
 | `LOG_LEVEL` | ✅ | INFO |
@@ -73,7 +73,8 @@ done; echo
 Dán output của các lệnh trên vào đây:
 
 ```
-(điền output)
+Chưa có kết quả cloud vì service chưa được deploy. Sau deploy sẽ lưu kết quả
+curl /health, /ready và /ask tại đây; không dán API key vào file này.
 ```
 
 ## Ảnh Chụp Màn Hình
@@ -97,5 +98,5 @@ Không đăng ký được tài khoản cloud? Vẫn nộp được bài, nhưng
 5. Ghi rõ lý do không deploy được vào phần dưới đây:
 
 ```
-(điền lý do nếu dùng phương án dự phòng, ngược lại xóa mục này)
+Không dùng phương án dự phòng tại thời điểm cập nhật tài liệu.
 ```
